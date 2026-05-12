@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PPT Image Restorer
 
 将模糊的 PPT 图片转化为清晰可编辑的 PPT 文件。
@@ -206,3 +207,7 @@ MIT License
 ## 贡献
 
 欢迎提交 Issue 和 Pull Request！
+=======
+# ppt-imgae
+skill which can convert image to ppt
+>>>>>>> f0a507f3e52395ae8495a436d24c8f52211df252
