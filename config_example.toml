@@ -1,0 +1,37 @@
+# PPT Image Restorer 配置文件示例
+# 复制此文件为 config.toml 并修改配置
+
+# === 全局设置 ===
+language = "zh"                    # 输出语言：auto, zh, en
+output_intermediate = false        # 是否保存中间结果（修复后的图片）
+intermediate_dir = "./output_intermediate"  # 中间结果目录
+
+# === OCR 配置 ===
+[ocr]
+use_angle_cls = true              # 是否使用方向分类器
+lang = "ch"                       # 语言：ch, en, japan, korean
+use_gpu = true                    # 是否使用 GPU 加速
+show_log = false                   # 是否显示日志
+
+# === 图像修复配置 ===
+[inpaint]
+sd_api_url = "http://127.0.0.1:7860"  # Stable Diffusion WebUI API 地址
+prompt = "clean background, no text, preserve original style, high quality photo"
+negative_prompt = "text, watermark, blurry, low quality, distortion, artifacts"
+steps = 20                        # 采样步数
+cfg_scale = 7.0                   # CFG 引导强度
+denoising_strength = 0.75         # 重绘幅度（0-1）
+mask_blur = 2                     # 掩码模糊半径
+inpainting_fill = 1               # 修复填充方式：0=原图, 1=潜在噪声, 2=潜在均匀
+
+# === PPT 生成配置 ===
+[ppt]
+slide_width = 10.0                # 幻灯片宽度（英寸）
+slide_height = 5.625              # 幻灯片高度（英寸，16:9 比例）
+default_font = "微软雅黑"          # 默认字体（WPS 兼容）
+default_font_size = 18            # 默认字号（磅）
+default_font_color = "000000"      # 默认颜色（十六进制）
+margin_left = 0.5                 # 左边距（英寸）
+margin_right = 0.5               # 右边距
+margin_top = 0.5                  # 上边距
+margin_bottom = 0.5              # 下边距
